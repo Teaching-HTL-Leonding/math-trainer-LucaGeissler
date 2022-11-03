@@ -1,0 +1,18 @@
+
+<form #f="ngForm">
+  <table>
+    <tr *ngFor="let item of quiz; let indexTest = index">
+      <td>{{item.number1}} {{item.operator}} {{item.number2}} = </td>
+      <td>
+        <input type="number" name="input{{indexTest}}" [(ngModel)]="item.input" required/>
+      </td>
+      <td [hidden]="!confirm" [style]="'color: ' + (item.result === item.input ? 'green' : 'red')">{{item.result}}</td>
+    </tr>
+  </table>
+</form>
+
+
+  <div>
+    <button type="button" (click)="done()" [disabled]="!f.form.valid">Done</button>
+    <a routerLink="/settings"><button >settings</button> </a>
+  </div>

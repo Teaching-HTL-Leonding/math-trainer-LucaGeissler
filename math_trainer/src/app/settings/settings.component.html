@@ -1,0 +1,23 @@
+<form #f="ngForm">
+  <div>
+    <label>How many digits do you want</label>
+    <input type="number" name="number" id="number" [(ngModel)]="calculation.digits" placeholder="1-4" min="1" max="4" />
+  </div>
+
+  <div>
+    <label>How many questions do you want</label>
+    <input type="number" name="questions" id="questions" [(ngModel)]="calculation.questions" placeholder="5-20" min="5" max="20" />
+  </div>
+
+  <div>
+    <label>Which operators do you want to practice</label>
+          <input type="checkbox" id="plus" [(ngModel)]="calculation.plus" name="plus" >+
+          <input type="checkbox" id="minus" [(ngModel)]="calculation.minus" name="minus">-
+          <input type="checkbox" id="multi" [(ngModel)]="calculation.multi" name="multi">*
+          <input type="checkbox" id="div" [(ngModel)]="calculation.divide" name="div">/
+  </div>
+
+    <a routerLink="/exercise"><button type="button" [disabled]="!f.form.valid || !calculation.oneTrue()">exercise</button> </a>
+</form>
+
+

@@ -1,0 +1,18 @@
+
+
+label{
+  margin-right: 10px;
+  padding: 10px;
+}
+div{
+  margin-top: 10px;
+}
+
+button{
+  margin-top: 10px;
+}
+
+input.ng-invalid {
+  background-color: red;
+  color: white;
+}
